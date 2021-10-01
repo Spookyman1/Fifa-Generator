@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './App.css';
 const teams = [
-  'https://play-lh.googleusercontent.com/Hzzl5TS7GVJnI8mstAqPuG8KBAmKeF3_bdHznX9RkaRI9W2eLi55IBV36PU-Y8NGN893',
+  'https://logos-world.net/wp-content/uploads/2020/06/PSG-emblem.png',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Juventus_FC_2017_logo.svg/1031px-Juventus_FC_2017_logo.svg.png',
    'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png', 
    'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png', 
-   'https://mpng.subpng.com/20180808/el/kisspng-fc-bayern-munich-bundesliga-logo-dream-league-socc-nextgame-bayern-munchen-437-00-kb-latest-ver-5b6aa6ca879619.2954599515337161705554.jpg', 
+   'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/2048px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png', 
    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png', 
