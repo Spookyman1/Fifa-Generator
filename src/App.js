@@ -52,7 +52,7 @@ const game = `${hen} vs ${ben}`;
   return (
     <div className='content'>
       <div className='match'>
-        <div  className='align'>
+        <div className='align'>
           <span>total wins: {p1Wins ? p1Wins : 0}</span>
           <img width ='100vw' height='100vh' src ={hen} /> 
           <button onClick={() => addWin(P1)}> Player 1 Won! </button>
