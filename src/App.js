@@ -14,13 +14,21 @@ const teams = [
    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png', 
    'https://logodownload.org/wp-content/uploads/2017/02/inter-milan-logo-1.png', 
    'https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png',
-   'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Sevilla_FC_logo.svg/1200px-Sevilla_FC_logo.svg.png'
+   'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Sevilla_FC_logo.svg/1200px-Sevilla_FC_logo.svg.png',
+   'https://banner2.cleanpng.com/20180601/get/kisspng-afc-ajax-de-klassieker-feyenoord-uefa-europa-leagu-ajax-5b112784c48bc2.3378279715278508848051.jpg',
+   'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/541px-Logo_of_AC_Milan.svg.png',
+   'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/255px-Arsenal_FC.svg.png'
+
+   
   ];
 const num = teams.length;
 
 const P1 = 'p1';
 const P2 = 'p2';
 
+const P1_WON = 'Player 1 Won!';
+const P2_WON = 'Player 2 Won!';
+const RANDOM_TEXT = 'New Match';
 
 
 const App = () => {  
@@ -31,9 +39,14 @@ const App = () => {
   const hen = React.useMemo(() => teams[index1], [index1]);
   const ben = React.useMemo(() => teams[index2], [index2]);
 
+  const generateRandom = () => Math.floor(Math.random()*(num)); 
+
   const shuffle = () => {
-    setIndex1(Math.floor(Math.random()*(num)))
-    setIndex2(Math.floor(Math.random()*(num)))
+    const random1 = generateRandom();
+    const random2 = generateRandom();
+
+    setIndex1(prev => prev === random1 ? generateRandom() : random1);
+    setIndex2(prev => prev === random2 ? generateRandom() : random2);
   }
 
   const addWin = (winner) => {
@@ -43,28 +56,34 @@ const App = () => {
   }
 
 React.useEffect(() => {
-if(hen === ben) {
-  setIndex2(Math.floor(Math.random()*(num)))
-}
+  if(hen === ben) {
+    shuffle();
+  }
 }, [hen, ben])
 
-const game = `${hen} vs ${ben}`;
+React.useEffect(() => console.log(index1, index2), [index1, index2])
+
+
   return (
     <div className='content'>
       <div className='match'>
         <div className='align'>
           <span>total wins: {p1Wins ? p1Wins : 0}</span>
           <img width ='100vw' height='100vh' src ={hen} /> 
-          <button onClick={() => addWin(P1)}> Player 1 Won! </button>
+          <button onClick={() => addWin(P1)}>
+            {P1_WON}
+          </button>
         </div>
         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7VLYlmtF68K5q7VwMF7AInZxQrldSlLDdyA&usqp=CAU' />
         <div className='align'>
         <span>total wins: {p2Wins ? p2Wins : 0}</span>
           <img src = {ben} width ='100vw' height='100vh' />
-          <button onClick={() => addWin(P2)}> Player 2 Won! </button>
+          <button onClick={() => addWin(P2)}>
+            {P2_WON}
+          </button>
         </div>
       </div>
-      <button onClick={shuffle}>New Match</button>
+      <button onClick={shuffle}>{RANDOM_TEXT}</button>
     </div>
   );
 }
